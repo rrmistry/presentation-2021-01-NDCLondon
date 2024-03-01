@@ -1,0 +1,43 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
+{
+    "name": "CalendarApp",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "image": "mcr.microsoft.com/dotnet/sdk:5.0",
+
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    "features": {},
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [5000, 5001],
+    "portsAttributes": {
+        "5001": {
+            "protocol": "https"
+        },
+        "5000": {
+            "protocol": "http"
+        }
+    },
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "dotnet dev-certs https",
+    "postStartCommand": "dotnet restore demo/CalendarApp/CalendarApp.sln",
+
+    // Configure tool-specific properties.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-dotnettools.csharp",
+                "ms-dotnettools.csdevkit",
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "mutantdino.resourcemonitor",
+                "streetsidesoftware.code-spell-checker",
+                "eamodio.gitlens",
+            ]
+        }
+    },
+
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+}
