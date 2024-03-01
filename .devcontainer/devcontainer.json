@@ -28,7 +28,7 @@
         "vscode": {
             "extensions": [
                 "ms-dotnettools.csharp",
-                "ms-dotnettools.csdevkit",
+                "qwtel.sqlite-viewer",
                 "GitHub.copilot",
                 "GitHub.copilot-chat",
                 "mutantdino.resourcemonitor",
