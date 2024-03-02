@@ -20,20 +20,20 @@
     },
 
     // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "dotnet dev-certs https",
-    "postStartCommand": "dotnet restore demo/CalendarApp/CalendarApp.sln",
+    "postCreateCommand": "file=.devcontainer/postStartCommand.sh && ($file || (chmod +x $file && $file))",
 
     // Configure tool-specific properties.
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-dotnettools.csharp",
-                "qwtel.sqlite-viewer",
-                "GitHub.copilot",
-                "GitHub.copilot-chat",
-                "mutantdino.resourcemonitor",
-                "streetsidesoftware.code-spell-checker",
                 "eamodio.gitlens",
+                "GitHub.copilot-chat",
+                "GitHub.copilot",
+                "ms-dotnettools.csdevkit",
+                "ms-dotnettools.csharp",
+                "mutantdino.resourcemonitor",
+                "qwtel.sqlite-viewer",
+                "streetsidesoftware.code-spell-checker"
             ]
         }
     },
